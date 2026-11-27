@@ -1,0 +1,96 @@
+name: Build Windows and Mac installers
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version tag (e.g. v1.0.0)"
+        required: true
+        default: "v1.0.0"
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: Sami9889/nexus-engine
+          token: ${{ secrets.SOURCE_TOKEN }}
+          path: source
+          lfs: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install MinGW
+        run: choco install mingw -y --no-progress
+      - name: Install Python deps
+        working-directory: source
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r NEXUS/requirements.txt pyinstaller cython
+      - name: Build C++ native engine
+        working-directory: source
+        run: |
+          mkdir NEXUS/native/cpp/build -Force
+          cd NEXUS/native/cpp/build
+          cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+          cmake --build . --config Release
+          New-Item -ItemType Directory -Force -Path ../../../../lib | Out-Null
+          Copy-Item libtiny_engine.dll ../../../../lib/tiny_engine.dll -Force
+      - name: Build production app
+        working-directory: source
+        run: python installer/build_native.py
+      - name: Install Inno Setup
+        run: choco install innosetup -y --no-progress
+      - name: Build Windows installer
+        working-directory: source
+        run: ISCC installer/windows/NEXUS.iss
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NEXUS-Setup.exe
+          path: source/installer/windows/Output/NEXUS-Setup.exe
+
+  build-macos:
+    runs-on: macos-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: Sami9889/nexus-engine
+          token: ${{ secrets.SOURCE_TOKEN }}
+          path: source
+          lfs: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build macOS installer
+        working-directory: source
+        run: bash installer/macos/build_macos.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NEXUS-macOS.dmg
+          path: source/dist-production/NEXUS-macOS.dmg
+
+  release:
+    needs: [build-windows, build-macos]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+      - name: Add installers to the release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.version }}
+          name: "NEXUS ENGINE ${{ inputs.version }}"
+          body: |
+            NEXUS ENGINE - free to use, closed source.
+            Copyright (c) 2026 Samrath Singh (sami9889). All rights reserved.
+            Do not copy, modify, redistribute, or re-upload the engine files.
+            Games you make with NEXUS ENGINE are yours.
+          files: |
+            artifacts/NEXUS-Setup.exe/NEXUS-Setup.exe
+            artifacts/NEXUS-macOS.dmg/NEXUS-macOS.dmg
+          draft: false
+          prerelease: false
