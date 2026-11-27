@@ -13,11 +13,9 @@ the full terms.
 
 ## Download
 
-Get the latest release here:
+The builds live right here on the main branch of this repo.
 
-https://github.com/Sami9889/NEXUS/releases
-
-- **Linux:** `NEXUS-linux.tar.gz` - extract it and run `./NEXUS`.
+- **Linux:** [NEXUS-linux.tar.gz](https://github.com/Sami9889/NEXUS/raw/main/NEXUS-linux.tar.gz) - extract it and run `./NEXUS`.
   The `lib/` folder next to it has to stay next to the app.
 - **Windows:** `NEXUS-Setup.exe` - coming soon.
 - **macOS:** `NEXUS-macOS.dmg` - coming soon.
