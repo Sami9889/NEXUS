@@ -82,6 +82,7 @@ jobs:
       - name: Add installers to the release
         uses: softprops/action-gh-release@v2
         with:
+          token: ${{ secrets.SOURCE_TOKEN }}
           tag_name: ${{ inputs.version }}
           name: "NEXUS ENGINE ${{ inputs.version }}"
           body: |
