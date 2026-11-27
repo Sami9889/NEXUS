@@ -17,10 +17,16 @@ Get the latest release here:
 
 https://github.com/Sami9889/NEXUS/releases
 
-- **Linux:** `NEXUS-linux.tar.gz` - extract it and run `./NEXUS`.
+- **Linux:** `NEXUS-linux.tar.gz` (145 MB) - extract it and run `./NEXUS`.
   The `lib/` folder next to it has to stay next to the app.
-- **Windows:** `NEXUS-Setup.exe` - coming soon.
-- **macOS:** `NEXUS-macOS.dmg` - coming soon.
+  Direct link: https://github.com/Sami9889/NEXUS/releases/download/v1.0.0/NEXUS-linux.tar.gz
+- **Linux (.deb):** `NEXUS-linux.deb` (122 MB) - installs to /opt, shows up
+  in the app menu, and can be launched with `nexus` from a terminal.
+  Direct link: https://github.com/Sami9889/NEXUS/releases/download/v1.0.0/NEXUS-linux.deb
+- **Windows:** `NEXUS-Setup.exe` (87 MB).
+  Direct link: https://github.com/Sami9889/NEXUS/releases/download/v1.0.0/NEXUS-Setup.exe
+- **macOS:** `NEXUS-macOS.dmg` (154 MB).
+  Direct link: https://github.com/Sami9889/NEXUS/releases/download/v1.0.0/NEXUS-macOS.dmg
 
 Every download comes with the default GameProject, so the editor opens
 with something to work on.
@@ -32,3 +38,9 @@ engineer and tech creator based in Melbourne, Australia.
 
 - Website: https://sami-s.dev
 - Contact: hello@sami-s.dev
+
+## Sponsors
+
+![Australian Phone Company](APC-logo.png)
+
+Australian Phone Company is a sponsor of NEXUS ENGINE.
