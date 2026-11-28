@@ -39,6 +39,11 @@ engineer and tech creator based in Melbourne, Australia.
 - Website: https://sami-s.dev
 - Contact: hello@sami-s.dev
 
+## Report an issue
+
+Found a bug, a broken download, or something wrong? Report it on the
+Issues page: https://github.com/Sami9889/NEXUS/issues
+
 ## Sponsors
 
 ![Australian Phone Company](APC-logo.png)
