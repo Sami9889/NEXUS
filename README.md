@@ -45,6 +45,6 @@ engineer and tech creator based in Melbourne, Australia.
 
 Australian Phone Company is a sponsor of NEXUS ENGINE.
 
-![Dubby](https://cdn.shopify.com/s/files/1/0552/7253/8296/files/dubby_png_logo.png?v=1615500378&width=640)
+![Dubby](dubby-logo.png)
 
 Dubby sponsors NEXUS ENGINE. Use code SAMI9889 for 10% off at [dubby.gg](https://www.dubby.gg/discount/SAMI9889?ref=doihgpyc).
