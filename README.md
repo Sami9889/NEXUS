@@ -8,6 +8,7 @@ with PBR lighting, cloth physics, weather, water, terrain, and more.
 
 **This repo is downloads only. The source code is closed and is not
 in this repo.** Do not re-upload, redistribute, or copy the engine
+(will be open sorce soon)
 files. Games you make with NEXUS ENGINE are yours. See `LICENSE` for
 the full terms.
 
@@ -30,6 +31,9 @@ https://github.com/Sami9889/NEXUS/releases
 
 Every download comes with the default GameProject, so the editor opens
 with something to work on.
+
+<img width="1919" height="1041" alt="image" src="https://github.com/user-attachments/assets/bc291b4a-5d1d-4c62-b4b2-eead762e6921" />
+(demo game)
 
 ## About
 
