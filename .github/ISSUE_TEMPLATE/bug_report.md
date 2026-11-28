@@ -3,7 +3,7 @@ name: Bug report
 about: Report a bug or a problem with NEXUS ENGINE or a download
 title: ''
 labels: bug
-assignees: ''
+assignees: Sami9889
 ---
 
 ## What happened
