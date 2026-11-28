@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: NEXUS website
+    url: https://sami-s.dev
+    about: Visit the NEXUS website for downloads and info
+  - name: Latest release
+    url: https://github.com/Sami9889/NEXUS/releases
+    about: Download the latest version of NEXUS ENGINE
